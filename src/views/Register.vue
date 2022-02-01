@@ -33,7 +33,10 @@
                   placeholder="password"
                 />
               </fieldset>
-              <button class="btn btn-lg btn-primary pull-xs-right">
+              <button
+                class="btn btn-lg btn-primary pull-xs-right"
+                :disabled="isSubmiting"
+              >
                 Sign Up
               </button>
             </form>
@@ -47,9 +50,15 @@
 <script>
 export default {
   name: 'McvRegister',
+  computed: {
+    isSubmiting() {
+      return this.$store.state.auth.isSubmiting
+    },
+  },
   methods: {
     onSubmit() {
       console.log(11)
+      this.$store.commit('registerStart')
     },
   },
 }
