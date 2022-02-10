@@ -23,7 +23,7 @@
               :to="{name: 'createArticle'}"
               active-class="active"
             >
-              <i class="ion-compose"></i>&nbsp;New Article
+              <i class="ion-compose"></i>&nbsp; New Article
             </router-link>
           </li>
 
@@ -33,7 +33,7 @@
               :to="{name: 'settings'}"
               active-class="active"
             >
-              <i class="ion-gear-a"></i>&nbsp;Settings
+              <i class="ion-gear-a"></i>&nbsp; Settings
             </router-link>
           </li>
 
