@@ -4,9 +4,9 @@
             <div class="container page">
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-xs-12">
-                        <mcv-validation-errors v-if="errors"  validation-errors="errors"/>
+                        <mcv-validation-errors v-if="errors"  :validation-errors="errors"/>
 
-                        <form @submit="onSubmit">
+                        <form @submit.prevent="onSubmit">
                             <fieldset>
                                 <fieldset class="form-group">
                                     <input type="text"
@@ -60,21 +60,21 @@
     import McvValidationErrors from "@/components/ValidationErrors";
     export default {
         name: 'McvArticleForm',
-        components: {McvValidationErrors},
         props: {
             initialValues: {
                 type: Object,
-                require: true
+                required: true
             },
             errors: {
                 type: Object,
-                require: false
+                required: false
             },
             isSubmitting: {
                 type: Boolean,
-                require: true
+                required: true
             }
         },
+        components: {McvValidationErrors},
         data() {
             return {
                 title: '',
@@ -89,7 +89,7 @@
                     title: this.title,
                     description:  this.description,
                     body: this.body,
-                    tagList: this.tagList
+                    tagList: this.tagList.split(' ')
                 }
                 this.$emit('articleSubmit', form)
             },
