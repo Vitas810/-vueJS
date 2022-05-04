@@ -77,10 +77,10 @@
         components: {McvValidationErrors},
         data() {
             return {
-                title: '',
-                description: '',
-                body: '',
-                tagList: ''
+                title: this.initialValues.title,
+                description: this.initialValues.description,
+                body: this.initialValues.body,
+                tagList: this.initialValues.tagList.join(' ')
             }
         },
         methods: {
