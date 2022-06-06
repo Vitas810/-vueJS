@@ -51,7 +51,7 @@ const getters = {
     return Boolean(state.isLoggedIn)
   },
   [getterTypes.isAnonymous]: (state) => {
-    return state.isAnonymous === false
+    return state.isLoggedIn === false
   },
 }
 
